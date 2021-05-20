@@ -1,0 +1,3 @@
+#SAM build and deploy
+bucket="`echo lambda-hello-world | tr 'A-Z' 'a-z'`"
+sam build && sam deploy --stack-name "lambda-hello-world" --parameter-overrides "ParameterKey=project_name,ParameterValue=lambda-hello-world,ParameterKey=aws_region,ParameterValue=us-east-1,ParameterKey=function_name,ParameterValue=lambda-hello-world" --s3-bucket "bucket-$bucket" --s3-prefix "lambda-hello-world" --region "us-east-1" --capabilities "CAPABILITY_IAM" --no-confirm-changeset
