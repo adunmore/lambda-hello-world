@@ -15,4 +15,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - run: sam build --use-container
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name hello-world
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name hello-world --s3-bucket hello-world
